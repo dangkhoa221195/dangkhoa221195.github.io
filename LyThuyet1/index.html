@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>LyThuyet1</title>
+		<style>
+		    * {
+			    margin: 0;
+			    padding: 0;
+			}
+			body {
+			    font-family: Georgia,'Times New Roman',Times,serif;
+			}
+			#container {
+			    margin: auto;
+			    width: 500px;
+				border: solid 1px #0033FF;
+			}
+			.title {
+			    height: 25px;
+				background-image: url("images/title_bg.gif");
+			}
+			.player-info {
+			    height: 100px;
+			}
+			#profile_picture {
+			    float: left;
+			}
+			.player-detail {
+				float: right;
+				margin-left: 20px;
+				width: 75%;
+			}
+			.player-detail ul {
+			    list-style: none;
+				overflow: scroll;
+				height: 100px;
+			}
+			#facts {
+			    clear: both;
+			}
+			#facts ul {
+			    width: 90%;
+				float: right;
+				list-style: none;
+			}
+			#facts li {
+			    background-image: url("images/star.png");
+				background-repeat: no-repeat;
+				padding-left: 20px;
+			}
+			#post {
+			    clear: both;
+			}
+			.post-contain {
+			    width: 98%;
+				margin: auto;
+				padding-left: 5px;
+				padding-top: 5px;
+			    background-color: #ECECEC;
+			}
+			
+			
+			
+			
+			
+			
+			#comment {
+			    clear: both;
+			}
+		</style>
+	</head>
+	<body>
+	    <div id="container">
+		    <div id="profile">
+			    <p class="title"><b>Player Profile</b></p>
+				<div class="player-info">
+				    <img id="profile_picture" src="images/avatar.gif" width="100px" height="90px" />
+					<div class="player-detail">
+					    <ul>
+						    <li>Tên: Nguyễn Xuân Nam</li>
+							<li>Nơi sinh: Hà Nội</li>
+							<li>Ngày sinh: 28/11/1990</li>
+							<li>Vị trí: Teamleader</li>
+							<li>Cao: 170cm</li>
+							<li>Nặng: 65kg</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div id="facts">
+			    <p id="facts_title"><b>Facts:</b></p>
+			    <ul>
+				    <li>Năm gia nhập Thể Công năm 1999</li>
+					<li>Trong suốt thời trai trẻ gia nhập Thể Công, Nam đạ ghi được 160 bàn thắng trong vòng 7 năm</li>
+					<li>Nam chơi trận đầu tiên cho U21 Việt Nam vào đọ tuổi 16</li>
+					<li>Nam đã đạt cúp U21 cho Việt Nam vào năm 2007</li>
+					<li>Nam đã đạt cúp cầu thủ xuất sắc nhất trong năm</li>
+				</ul>
+			</div>
+			
+			<div id="post">
+			    <div class="post-contain">
+				    Nam chơi cho câu lạc bộ Thể Công.<br />
+					Thể Công đạt cúp vô địch
+				</div>
+				<div class="post-info">
+				    <img src="images/comment_bg.git" width="50px">
+				    Posted by <a href="#">Thể Công's Fan</a> 20/12/2007
+				</div>
+				<div class="post-contain">
+				    Nam là cầu thủ chơi rất hay ở Thể Công.<br />
+					Và anh đã chuyển tới Hòa Phát <>:)
+				</div>
+				<div class="post-info">
+				    Posted by <a href="#">Hoà Phát's Fan</a> 20/12/2007
+				</div>
+			</div>
+			
+			<div id="comment">
+			    <h3>Your comment</h3>
+				<table width="100%" border="0" cellspacing="0">
+				    <tr>
+					   <td>Your name</td>
+					   <td><input type="text" width="20px"></td>
+					</tr>
+					<tr>
+					   <td valign="center">Your email(will not public)</td>
+					   <td><input type="text" width="20px"></td>
+					</tr>
+					<tr>
+					   <td>Comment</td>
+					   <td><textarea type="textarea" cols="20" rows="5">Your comment here &lt;/textarea&gt;</textarea></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
