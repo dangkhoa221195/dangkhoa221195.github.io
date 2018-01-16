@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+	    <meta charset="utf-8"/>
 	    <title>LyThuyet1</title>
 		<style>
 		    * {
@@ -37,11 +38,13 @@
 			}
 			#facts {
 			    clear: both;
+				margin-top: 20px;
 			}
 			#facts ul {
 			    width: 90%;
 				float: right;
 				list-style: none;
+				margin-top: 20px;
 			}
 			#facts li {
 			    background-image: url("images/star.png");
@@ -50,6 +53,16 @@
 			}
 			#post {
 			    clear: both;
+				margin-top: 180px;
+			}
+			.post-info img {
+			    float: left;
+				width: 100px;
+				height: 20px;
+			}
+			.post-info p {
+			    width: 80%;
+				float: left;
 			}
 			.post-contain {
 			    width: 98%;
@@ -57,16 +70,34 @@
 				padding-left: 5px;
 				padding-top: 5px;
 			    background-color: #ECECEC;
+				clear: both;
 			}
-			
-			
-			
-			
-			
-			
+			#profile_picture {
+			    width: 100px;
+				height: 90px;
+			}
 			#comment {
 			    clear: both;
+				margin-top: 40px;
 			}
+			#comment_table {
+			    width: 100%;
+				border-width: 0;
+				 border-spacing: 0 
+			}
+			#comment_table td {
+			    width: 200px;
+			}
+			#comment h3 {
+			    text-align: center
+			}
+			#comment td {
+			    padding-left: 10px;
+			}
+			#txt_name, #txt_email {
+			    width: 120px;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -74,7 +105,7 @@
 		    <div id="profile">
 			    <p class="title"><b>Player Profile</b></p>
 				<div class="player-info">
-				    <img id="profile_picture" src="images/avatar.gif" width="100px" height="90px" />
+				    <img id="profile_picture" src="images/avatar.gif" alt="profile_picture" />
 					<div class="player-detail">
 					    <ul>
 						    <li>Tên: Nguyễn Xuân Nam</li>
@@ -105,32 +136,33 @@
 					Thể Công đạt cúp vô địch
 				</div>
 				<div class="post-info">
-				    <img src="images/comment_bg.git" width="50px">
-				    Posted by <a href="#">Thể Công's Fan</a> 20/12/2007
+				    <img src="images/comment_bg.gif" alt="comment_bg">
+				    <p>Posted by <a href="#">Thể Công's Fan</a> 20/12/2007</p>
 				</div>
 				<div class="post-contain">
 				    Nam là cầu thủ chơi rất hay ở Thể Công.<br />
-					Và anh đã chuyển tới Hòa Phát <>:)
+					Và anh đã chuyển tới Hòa Phát &lt;>:)
 				</div>
 				<div class="post-info">
-				    Posted by <a href="#">Hoà Phát's Fan</a> 20/12/2007
+				    <img src="images/comment_bg.gif" alt="comment_bg">
+				    <p>Posted by <a href="#">Hoà Phát's Fan</a> 20/12/2007</p>
 				</div>
 			</div>
 			
 			<div id="comment">
 			    <h3>Your comment</h3>
-				<table width="100%" border="0" cellspacing="0">
+				<table id="comment_table">
 				    <tr>
 					   <td>Your name</td>
-					   <td><input type="text" width="20px"></td>
+					   <td><input type="text" id="txt_name"></td>
 					</tr>
 					<tr>
-					   <td valign="center">Your email(will not public)</td>
-					   <td><input type="text" width="20px"></td>
+					   <td>Your email(will not public)</td>
+					   <td><input type="text" id="txt_email"></td>
 					</tr>
 					<tr>
 					   <td>Comment</td>
-					   <td><textarea type="textarea" cols="20" rows="5">Your comment here &lt;/textarea&gt;</textarea></td>
+					   <td><textarea cols="40" rows="5">Your comment here &lt;/textarea&gt;</textarea></td>
 					</tr>
 				</table>
 			</div>
