@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>ThucHanh2</title>
+	<style>
+	* {
+	    margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+	}
+	#header {
+	    position: relative;
+		height: 294px;
+	}
+	#header_back {
+	    position: absolute;
+		width: 1349px;
+	}
+	#header_logo {
+	    position: absolute;         
+		z-index: 2;  
+		width: 77px;
+		top: 45px;
+		left: 30px;
+	}
+	#header_slogan {
+	    position: absolute;
+		z-index: 3;
+		font-size: 50px;
+		top: 60px;
+		left: 150px;
+	}
+	#header_slogan span img {
+	    width: 5px;
+	}
+	#header ul {
+	    position: absolute;
+	    z-index: 4;
+		top: 159px;
+		left: 51px;
+	}
+	#header li {
+		display: inline-block;
+		margin-left: 10px;
+	}
+	#header li a {
+	    text-decoration: none;
+	}
+	#header li p {
+	    color: white;
+		text-align: center;
+		font-size: 25px;
+	}
+	.header-nav {
+	    width: 108px;
+	}
+	#main {
+	    color: #707070;
+		background-color: #121212;
+		padding-top: 50px;
+		display: table;
+		width: 1349px;
+		padding-bottom: 30px;
+	}
+	#main_left_border {
+	    background-color: #1F1F1F;
+		width: 19%;
+		margin-left: 100px;
+		padding-top: 40px;
+		padding-bottom: 30px;
+		float: left;
+	}
+	#left_box {
+	    width: 85%;
+		margin: auto;
+		border-top: 1px solid #7E7E7E;
+		border-bottom: 1px solid #2C2C2C;
+		padding-top: 20px;
+		padding-bottom: 60px;
+	}
+	#main_left_content {
+	    font-size: 13px;
+		width: 80%;
+		margin-left: 19px;
+	}
+	#main_left_link {
+	    width: 60%;
+	    margin: auto;
+	}
+	#main_left_link ul {
+	    list-style-image: url(images/arr.gif);
+		margin-top: 30px;
+	}
+	#main_left_link ul li {
+	    margin-bottom: 8px;
+	}
+	#main_left_link a {
+	    font-size: 13px;
+		color: #707070;
+	}
+	#main_right {
+	    width: 60%;
+		float: left;
+		padding-top: 35px;
+	}
+	.main-image {
+	    width: 395px;
+		margin-left: 40px;
+		border-radius: 15px;
+		border: 2px solid #1A1A1A;
+	}
+	.blank {
+	    width: 100px;
+		height: 20px;
+		margin-left: 60px;
+		margin-top: 15px;
+		background-color: #2C2C2C;
+	}
+	.image-discription {
+	    width: 395px;
+		margin-left: 60px;
+		margin-top: 15px;
+		font-size: 13px;
+		border-bottom: 1px dotted #323232;
+		padding-bottom: 15px;
+	}
+	.launch-website {
+	    font-size: 11px;
+	    padding-left: 20px;
+		padding-top: 15px;
+        color: white;
+	    margin-left: 60px;
+	    background-image: url("images/arr_1.gif");
+	    background-repeat: no-repeat;
+	    background-position: left 16px;
+		margin-bottom: 40px;
+	}
+	.launch-website a {
+	    text-decoration: none;
+		color: white;
+	}
+	#footer {
+	    background-color: #121212;
+		color: #707070;
+		width: 1349px;
+	}
+	#footer_content {
+	    width: 700px;
+		margin-left: 110px;
+		border-top: 1px dotted #707070;
+		font-size: 11px;
+		padding-left: 10px;
+		padding-top: 20px;
+		padding-bottom: 60px;
+	}
+	#footer_content span {
+	    text-decoration: underline;
+	}
+	</style>
+</head>
+<body>
+    <div id="header">
+	    <h3 id="header_slogan"><span><img src="images/dot.gif" alt="dot"></span> My <span><img src="images/dot.gif" alt="dot"></span> Style <span><img src="images/dot.gif" alt="dot"></span></h3>
+		<img id="header_back" alt="header_back" src="images/fill_header.jpg">
+		<img id="header_logo" alt="header_logo" src="images/logo.jpg">
+		<ul>
+		    <li>
+			    <a href="#">
+			        <img class="header-nav" id="header_home" alt="header_home" src="images/m1.jpg">
+				    <p>Home</p>
+				</a>
+			</li>
+			<li>
+			    <a href="#">
+			        <img class="header-nav" id="header_folder" alt="header_folder" src="images/m2.jpg">
+				    <p>Folder</p>
+				</a>
+			</li>
+			<li>
+			    <a href="#">
+			        <img class="header-nav" id="header_desk" alt="header_desk" src="images/m3.jpg">
+				    <p>Desk</p>
+				</a>
+			</li>
+			<li>
+			    <a href="#">
+			        <img class="header-nav" id="header_chair" alt="header_chair" src="images/m4.jpg">
+				    <p>Chair</p>
+				</a>
+			</li>
+			<li>
+			    <a href="#">
+			        <img class="header-nav" id="header_top" alt="header_top" src="images/m5.jpg">
+				    <p>Top</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div id="main">
+	    <div id="main_left_border">
+		    <div id="left_box">
+		        <div id="main_left_content">Rem apque nveritati quasichite cto beatae vitae dicta sexplicabo enima ipsam voluptatem!</div>
+			</div>
+			<div id="main_left_link">
+			    <ul>
+				    <li><a href="#">Sed ut pers piciatis unde</a></li>
+					<li><a href="#">Komniste namoitaseanti</a></li>
+					<li><a href="#">Opque nveriati quas</a></li>
+					<li><a href="#">Archiite dicta sexcabo</a></li>
+					<li><a href="#">Nemoenim ipsam</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main_right">
+		    <div class="main-post">
+		        <img class="main-image" alt="design studio" src="images/0_pic_1.jpg">
+			    <div class="blank"></div>
+			    <div class="image-discription">Rem apque nveritati quasi architecto beatae vitae dicta sexplicabo enima ipsam voluptatem, quia voluptaspenatur aut oditia consequuntur</div>
+				<div class="launch-website"><a href="#">launch website</a></div>
+			</div>
+			<div class="main-post">
+		        <img class="main-image" alt="energy wave" src="images/0_pic_2.jpg">
+			    <div class="blank"></div>
+			    <div class="image-discription">Rem apque nveritati quasi architecto beatae vitae dicta sexplicabo enima ipsam voluptatem, quia voluptaspenatur aut oditia consequuntur</div>
+				<div class="launch-website"><a href="#">launch website</a></div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+	    <div id="footer_content">CREATIVE DESIGN LAB &copy; 2008 | <span>PRIVACY POLICY</span></div>
+	</div>
+</body>
+</html>
