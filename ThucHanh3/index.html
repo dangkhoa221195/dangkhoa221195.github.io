@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>ThucHanh3</title>
+	<style>
+	* {
+	    margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+	}
+	#container {
+	    width: 73%;
+		margin: auto;
+		background-color: #292728;
+		padding-top: 30px;
+	}
+	#main {
+	    display: table;
+	}
+	#news {
+	    width: 66%;
+		margin-left: 0.5%;
+		border-top: 1px solid white;
+		display: table;
+		float: left;
+	}
+	#news_info {
+	    background-color: white;
+	}
+	.news-daily {
+	    width: 50%;
+		float: left;
+		background-color: white;
+		margin-bottom: 20px;
+	}
+	.news-daily h4 {
+	    background: url("images/h2-confidential-heading-bg.gif") 0 -2px;
+		color: white;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 5px;
+	}
+	.gossip {
+	    border-right: 1px solid black;
+	}
+	.news-daily-content {
+	    padding-top: 10px;
+		border-right: 1px dotted black;
+	}
+	.news-daily-image {
+	    width: 300px;
+		margin: auto;
+	}
+	.news-daily-more {
+	    background: url(images/h3-confidential-showbuzz-bg.gif) no-repeat 13px;
+		width: 100%;
+		display: table;
+		padding-bottom: 12px;
+	}
+	.news-daily-more a {
+	    font-size: 13px;
+		width: 10%;
+		text-decoration: none;
+		color: black;
+		font-weight: bold;
+		margin-left: 80%;
+	}
+	.news-daily-discription {
+	    font-size: 11px;
+	}
+	.news-daily-discription p {
+	    padding-left: 12px;
+		margin-bottom: 5px;
+	}
+	#confidential_logo {
+	    clear: both;
+		height: 30px;
+		background: url(images/confidential-logo.gif) no-repeat 17px 3px;
+	}
+	#news_trailers {
+	    width: 49%;
+		float: left;
+		margin-top: 15px;
+		background-color: white;
+		padding-bottom: 7px;
+	}
+	#news_trailers_header {
+	    color: white;
+		background: url(images/h2-top-movie-trailers-bg.gif);
+		height: 23px;
+		padding-left: 15px;
+		padding-top: 5px;
+		overflow: hidden;
+	}
+	.second-trailer {
+	    border-top: 1px solid #BDBDBD;
+		border-bottom: 1px solid #BDBDBD;
+	}
+	.news-trailers-movie {
+	    clear: both;
+		display: table;
+	}
+	.news-trailers-movie-name {
+	    background: url(images/h3-movie-trailers-bg.gif) 0 -2px;
+		height: 20px;
+		padding-left: 15px;
+		color: #1785B6;
+		padding-right: 5px;
+		margin-bottom: 5px;
+		clear: both;
+		font-size: 13px;
+		font-weight: bold;
+		margin-top: 5px;
+	}
+	.news-trailers-movie-name::after {
+	    content: url(images/down.gif);
+		float: right;
+		margin-top: -1px;
+	}
+	.news-trailers-movie-img {
+	    margin-left: 10px;
+		float: left;
+		width: 100px;
+	}
+	.news-trailers-movie-discription {
+	    font-size: 12px;
+		width: 57%;
+		float: left;
+		margin-left: 9px;
+	}
+	.watch-now {
+	    font-size: 12px;
+		color: #1085C8;
+		padding-left: 25px;
+		font-weight: bold;
+		background: url(images/film-icons.gif) no-repeat;
+	}
+	#now_showing {
+	    margin-top: 8px;
+		clear: both;
+	}
+	#now_showing span {
+	    font-size: 11px;
+		background: url(images/now-showing-icon.gif) no-repeat;
+		padding-left:20px;
+		font-weight: bold;
+		margin-left: 15px;
+	}
+	#now_showing select {
+	    width: 197px;
+	}
+	#news_reviews {
+	    width: 48%;
+	    margin-top: 15px;
+		float: right;
+		background-color: white;
+		padding-bottom: 8px;
+	}
+	#news_reviews_header {
+	    color: white;
+		background: url(images/bg_movie_review.jpg);
+		height: 23px;
+		padding-left: 15px;
+		padding-top: 5px;
+		overflow: hidden;
+	}
+	.news-reviews-film {
+	    border-bottom: 1px dotted #A4A4A4;
+		padding-bottom: 6px;
+	}
+    .news-reviews-film-name {
+	    font-size: 17px;
+	    color: #2381C1;
+		margin-top: 4px;
+		margin-left: 10px;
+		font-family: none;
+		width: 60%;
+		float: left;
+		height: 20px;
+	}
+	.news-reviews-star1 {
+	    width: 23%;
+		float: right;
+		background: url(images/topic-star-ratings.gif) no-repeat 0 -64px;
+		height: 20px;
+		margin-top: 4px;
+	}
+	.news-reviews-img {
+	    margin-left: 10px;
+		margin-top: 5px;
+		width: 100px;
+		float: left;
+		margin-bottom: 6px;
+	}
+	.news-reviews-discription {
+	    margin-top: 5px;
+	    font-size: 12px;
+		width: 60%;
+		float: left;
+		margin-left: 8px;
+	}
+	.view-trailer {
+	    clear: both;
+		background: url(images/film-icons.gif) no-repeat;
+		padding-left: 23px;
+		font-size: 12px;
+		margin-left: 7px;
+		font-weight: bold;
+	}
+	.view-trailer a {
+	    text-decoration: none;
+		color: #2381C1;
+	}
+	.news-reviews-star2 {
+	    width: 23%;
+		float: right;
+		background: url(images/topic-star-ratings.gif) no-repeat 0 -48px;
+		height: 20px;
+		margin-top: 4px;
+	}
+	#local_cinema {
+	    margin-top: 6px;
+	}
+	#local_cinema a {
+	    font-size: 12px;
+		color: #2381C1;
+		text-decoration: none;
+		font-weight: 700;
+		background: url(images/clock.gif) no-repeat;
+		padding-left: 23px;
+		margin-left: 8px;
+		width: 45%;
+		float: left;
+	}
+	#more_movies {
+		width: 33%;
+		float: right;
+		font-size: 12px;
+	}
+	#more_movies a {
+	    text-decoration: none;
+		color: #5A5A5A;
+	}
+	#form_search {
+	    width: 30%;
+		float: left;
+		margin-left: 25px;
+	}
+	#search_content {
+	    margin-left: 17px;
+		width: 140px;
+		height: 20px;
+	}
+	#search button {
+	    background: url(images/bg_search.jpg);
+		height: 18px;
+		color: white;
+		font-size: 10px;
+		border: 1px solid #292728;
+		width: 62px;
+		font-weight: bold;
+	}
+	#social {
+	    clear: both;
+		border-top: 1px dashed white;
+		margin-top: 20px;
+		padding-bottom: 10px;
+	}
+	#social ul {
+	    margin-top: 10px;
+	    list-style: none;
+		text-align: center;
+	}
+	#social li {
+	    display: inline-table;
+		text-align: center;
+		width: 19%;
+	}
+	#social li a {
+	    color: white;
+		text-decoration: none;
+		font-size: 11px;
+	}
+	#footer {
+	    clear: both;
+	    background: white;
+	}
+	#other_info {
+	    width: 75%;
+		margin-left: 12%;
+		float: left;
+	}
+	#other_info_list {
+		font-size: 11px;
+		color: #3586C5;
+		text-align: center;
+		padding-top: 10px;
+	}
+	#other_info_list a {
+	    text-decoration: none;
+		color: #3586C5;
+	}
+	#copyright {
+	    color: #3586C5;
+		font-size: 11px;
+		text-align: center;
+		margin-top: 3px;
+	}
+	#back_to_top {
+		margin-top: 3px;
+		width: 7%;
+		float: right;
+	}
+	#back_to_top a {
+	    color: #3586C5;
+		font-size: 11px;
+		text-decoration: none;
+	}
+	</style>
+</head>
+<body>
+    <div id="container">
+	    <div  id="main">
+			<div id="news">
+				<div id="news_info">
+					<div class="news-daily">
+						<h4 class="gossip">DAILY CELEBRITY GOSSIP</h4>
+						<div class="news-daily-content">
+							<div class="news-daily-image"><img src="images/crowe.jpg" alt="crowe"></div>
+							<div class="news-daily-more"><a href="#">MORE</a></div>
+							<div class="news-daily-discription">
+								<p><b>+ RUSSEL CROWE + MORE...</b></p>
+								<p>RUSSELL CROWE's son to marry Keith & Nicole's daughter, plus Renee Zelweger reveals her breast cancer scare</p>
+							</div>
+						</div>
+					</div>
+					<div class="news-daily">
+						<h4>DAILY CELEBRITY PICS</h4>
+						<div class="news-daily-content">
+							<div class="news-daily-image"><img src="images/beckham.jpg" alt="beckham"></div>
+							<div class="news-daily-more"><a href="#">MORE</a></div>
+							<div class="news-daily-discription">
+								<p><b>+ BECKHAM, CLAUDIA SCHIFFER</b></p>
+								<p>VICTORIA and David Beckham dine out in NY, as top models Claudia Schiffer and Eva Herzigona hit the shops in Milan</p>
+							</div>
+						</div>
+					</div>
+					<div id="confidential_logo"></div>
+				</div>
+				<div id="news_trailers">
+					<div id="news_trailers_header">TOP 3 MOVIE TRAILERS</div>
+					<div class="news-trailers-movie">
+						<div class="news-trailers-movie-name">The House Bunny(M)</div>
+						<div class="news-trailers-movie-img"><img src="images/0,,6254346,00.jpg" alt="house bunny"></div>
+						<div class="news-trailers-movie-discription">
+							When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
+							<div class="watch-now">Watch Now</div>
+						</div>
+						
+					</div>
+					<div class="news-trailers-movie">
+						<div class="news-trailers-movie-name second-trailer">Eagle Eye(M)</div>
+						<img class="news-trailers-movie-img" src="images/0,,6254346,00.jpg" alt="eagle eye">
+						<div class="news-trailers-movie-discription">
+							When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
+							<div class="watch-now">Watch Now</div>
+						</div>
+					</div>
+					<div class="news-trailers-movie">
+						<div class="news-trailers-movie-name">Journey To The Center Of The Earth(PG)</div>
+						<img class="news-trailers-movie-img" src="images/0,,6254346,00.jpg" alt="journey">
+						<div class="news-trailers-movie-discription">
+							When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
+							<div class="watch-now">Watch Now</div>
+						</div>
+					</div>
+					<div id="now_showing">
+						<span>Now Showing</span>
+						<select name="now_showing">
+							<option>Select Movie</option>
+						</select>
+					</div>
+				</div>
+				<div id="news_reviews">
+					<div id="news_reviews_header">MOVIE REVIEWS</div>
+					<div class="news-reviews-list">
+						<div class="news-reviews-film">
+							<div class="news-reviews-film-name">Eagle Eye</div>
+							<div class="news-reviews-star1"></div>
+							<div class="news-reviews-img"><img src="images/thumb_100x66_216371_216162_2008_eagle_eye_00.jpg" alt="eagle eye"></div>
+							<div class="news-reviews-discription">SHIA LaBeouf hits the ground running in Eagle Eye, an against the clock conspiracy thriller with a timely technological t...</div>
+							<div class="view-trailer"><a href="#">View Trailer</a></div>
+						</div>
+						<div class="news-reviews-film">
+							<div class="news-reviews-film-name">House Bunny</div>
+							<div class="news-reviews-star2"></div>
+							<div class="news-reviews-img"><img src="images/thumb_100x66_215784_215698_2008_the_house_bunny.jpg" alt="house bunny"></div>
+							<div class="news-reviews-discription">IF YOU left Legally Blonde and Revenge Of The Nerds DVDs in a darkened room for long enough, something like The House Bun...</div>
+							<div class="view-trailer"><a href="#">View Trailer</a></div>
+						</div>
+						<div id="local_cinema"><a href="#">Local Cinema listings</a></div>
+						<div id="more_movies"><a href="#">+ MORE MOVIES</a></div>
+					</div>
+				</div>
+			</div>
+			<div id="form_search">
+				<img id="entertainment" src="images/entertainment.jpg" alt="entertainment">
+				<form id="search" name="search" method="get">
+					<input type="text" id="search_content" name="search_content">
+					<button type="submit">SEARCH</button>
+				</form>
+			</div>
+		</div>
+		<div id="social">
+		    <ul>
+			    <li>
+					<a href="#">
+						<img src="images/mobile.jpg" alt="mobile">
+						<p>News on your mobile</p>
+				    </a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/rss.jpg" alt="rss">
+						<p>RSS feeds</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/letter.jpg" alt="letter">
+						<p>Newsletters</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/story.jpg" alt="story">
+						<p>Send your news stories</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/photo.jpg" alt="photo">
+						<p>Send your news photos</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="footer">
+			<div id="other_info">
+				<div id="other_info_list">
+					<a href="#">Help</a> | 
+					<a href="#">Contact Us</a> | 
+					<a href="#">Advertise with Us</a> | 
+					<a href="#">Job Opportunities</a> | 
+					<a href="#">Terms & Conditions</a> | 
+					<a href="#">Privacy Policy</a> | 
+					<a href="#">Accessibility</a> | 
+					<a href="#">Sitemap</a> | 
+					<a href="#">News Headlines from Our Partners</a>
+				</div>
+				<div id="copyright">Copyright 2006 News Limited. All times AESTA (GMT +10)</div>
+			</div>
+			<div id="back_to_top"><a href="#">Back to top</a></div>
+		</div>
+	</div>
+</body>
+</html>
