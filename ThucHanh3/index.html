@@ -491,7 +491,7 @@
 	    $(".news-trailers-movie-name").click(function(){
 		    $(this).siblings(".news-trailers-movie-slide").slideToggle();
 			$click++;
-			if ($click % 2 != 0) {
+			if ($(this).children(".news-trailers-movie-arrow").attr("src") == "images/right.gif") {
 			    $(this).children(".news-trailers-movie-arrow").attr("src","images/down.gif");
 			} else {
 			    $(this).children(".news-trailers-movie-arrow").attr("src","images/right.gif");
