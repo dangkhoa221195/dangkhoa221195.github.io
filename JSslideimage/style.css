@@ -1,0 +1,43 @@
+.slideshow-container {
+    max-width: 80%;
+    position: relative;
+    margin: auto;
+}
+.mySlides {
+    display: none;
+    width: 70%;
+    float: left;
+}
+.mySlides img {
+    width:100%;
+}
+.pre, .next {
+    cursor: pointer;
+    float: left;
+    width: 2%;
+    background: gray;
+    color: white;
+    margin-top: 125px;
+}
+.pre:hover, .next:hover {
+    background: black;
+    color: white;
+}
+.smallImages {
+    cursor: pointer;
+}
+.footer ul {
+    list-style: none;
+    clear: both;
+}
+.footer li {
+    width: 10%;
+    display: inline-block;
+    margin-right: 2px;
+}
+.footer li img {
+    width: 100%;
+}
+.active {
+    border: 2px solid blue;
+}

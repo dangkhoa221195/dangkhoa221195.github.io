@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Slide image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="content">
+            <a class="pre" onclick="changeSlide(-1)">&lt;&lt;</a>
+            <div class="mySlides"><img src="images/img1.jpg" alt="img1"></div>
+            <div class="mySlides"><img src="images/img2.jpg" alt="img2"></div>
+            <div class="mySlides"><img src="images/img3.jpg" alt="img3"></div>
+            <div class="mySlides"><img src="images/img4.jpg" alt="img4"></div>
+            <a class="next" onclick="changeSlide(1)">&gt;&gt;</a>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><img class="smallImages" onclick="currentSlide(1)" src="images/img1.jpg" alt="img1"></li>
+                <li><img class="smallImages" onclick="currentSlide(2)" src="images/img2.jpg" alt="img1"></li>
+                <li><img class="smallImages" onclick="currentSlide(3)" src="images/img3.jpg" alt="img1"></li>
+                <li><img class="smallImages" onclick="currentSlide(4)" src="images/img4.jpg" alt="img1"></li>
+            </ul>
+        </div>
+    </div>
+    <script src="slideimage.js"></script>
+</body>
+</html>
