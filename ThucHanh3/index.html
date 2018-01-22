@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
 	<title>ThucHanh3</title>
+	<script src="jquery-3.2.1.min.js"></script>
 	<style>
 	* {
 	    margin: 0;
@@ -93,13 +94,10 @@
 		padding-top: 5px;
 		overflow: hidden;
 	}
-	.second-trailer {
-	    border-top: 1px solid #BDBDBD;
-		border-bottom: 1px solid #BDBDBD;
-	}
 	.news-trailers-movie {
 	    clear: both;
 		display: table;
+		width: 100%;
 	}
 	.news-trailers-movie-name {
 	    background: url(images/h3-movie-trailers-bg.gif) 0 -2px;
@@ -107,16 +105,24 @@
 		padding-left: 15px;
 		color: #1785B6;
 		padding-right: 5px;
-		margin-bottom: 5px;
 		clear: both;
 		font-size: 13px;
 		font-weight: bold;
 		margin-top: 5px;
+		width: 93%;
+		cursor: pointer;
 	}
-	.news-trailers-movie-name::after {
-	    content: url(images/down.gif);
+	.news-trailers-movie-name div {
+	    width: 95%;
+		float: left;
+	}
+	.news-trailers-movie-arrow {
 		float: right;
-		margin-top: -1px;
+		margin-top: 3px;
+	}
+	.news-trailers-movie-slide {
+	    display: table;
+		margin-top: 5px;
 	}
 	.news-trailers-movie-img {
 	    margin-left: 10px;
@@ -351,28 +357,42 @@
 				<div id="news_trailers">
 					<div id="news_trailers_header">TOP 3 MOVIE TRAILERS</div>
 					<div class="news-trailers-movie">
-						<div class="news-trailers-movie-name">The House Bunny(M)</div>
-						<div class="news-trailers-movie-img"><img src="images/0,,6254346,00.jpg" alt="house bunny"></div>
-						<div class="news-trailers-movie-discription">
-							When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
-							<div class="watch-now">Watch Now</div>
+						<div class="news-trailers-movie-name">
+						    <div>The House Bunny(M)</div>
+							<img class="news-trailers-movie-arrow" src="images/right.gif" alt="right">
 						</div>
-						
-					</div>
-					<div class="news-trailers-movie">
-						<div class="news-trailers-movie-name second-trailer">Eagle Eye(M)</div>
-						<img class="news-trailers-movie-img" src="images/0,,6254346,00.jpg" alt="eagle eye">
-						<div class="news-trailers-movie-discription">
-							When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
-							<div class="watch-now">Watch Now</div>
+						<div class="news-trailers-movie-slide">
+						    <div class="news-trailers-movie-img"><img src="images/0,,6254346,00.jpg" alt="house bunny"></div>
+							<div class="news-trailers-movie-discription">
+								When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
+								<div class="watch-now">Watch Now</div>
+							</div>
 						</div>
 					</div>
 					<div class="news-trailers-movie">
-						<div class="news-trailers-movie-name">Journey To The Center Of The Earth(PG)</div>
-						<img class="news-trailers-movie-img" src="images/0,,6254346,00.jpg" alt="journey">
-						<div class="news-trailers-movie-discription">
-							When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
-							<div class="watch-now">Watch Now</div>
+						<div class="news-trailers-movie-name">
+						    <div>Eagle Eye(M)</div>
+							<img class="news-trailers-movie-arrow" src="images/right.gif" alt="right">
+						</div>
+						<div class="news-trailers-movie-slide">
+						    <img class="news-trailers-movie-img" src="images/0,,6254346,00.jpg" alt="eagle eye">
+							<div class="news-trailers-movie-discription">
+								When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
+								<div class="watch-now">Watch Now</div>
+							</div>
+						</div>
+					</div>
+					<div class="news-trailers-movie">
+						<div class="news-trailers-movie-name">
+						    <div>Journey To The Center Of The Earth(PG)</div>
+							<img class="news-trailers-movie-arrow" src="images/right.gif" alt="right">
+						</div>
+						<div class="news-trailers-movie-slide">
+						    <img class="news-trailers-movie-img" src="images/0,,6254346,00.jpg" alt="journey">
+							<div class="news-trailers-movie-discription">
+								When Playboy bunny Shelly is tossed out of the mansion, she falls in with the sorority girls from Zta Alpha Zeta
+								<div class="watch-now">Watch Now</div>
+							</div>
 						</div>
 					</div>
 					<div id="now_showing">
@@ -464,5 +484,20 @@
 			<div id="back_to_top"><a href="#">Back to top</a></div>
 		</div>
 	</div>
+	<script>
+	$(document).ready(function(){
+	    $(".news-trailers-movie-slide").hide();
+		$click = 0;
+	    $(".news-trailers-movie-name").click(function(){
+		    $(this).siblings(".news-trailers-movie-slide").slideToggle();
+			$click++;
+			if ($click % 2 != 0) {
+			    $(this).children(".news-trailers-movie-arrow").attr("src","images/down.gif");
+			} else {
+			    $(this).children(".news-trailers-movie-arrow").attr("src","images/right.gif");
+			}
+		});
+	});
+	</script>
 </body>
 </html>
