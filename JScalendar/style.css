@@ -1,0 +1,40 @@
+.now {
+    background: #00ACE6;
+    cursor: pointer;
+}
+.others:hover {
+    background: #00ffff;
+    cursor: pointer;
+}
+table {
+    background: #2D2D2D;
+}
+td {
+    text-align: center;
+    background: white;
+    width: 10%;
+    height: 25px;
+}
+.arrow {
+    color: #2E86C1;
+    cursor: pointer;
+    background: #A9CCE3;
+}
+.word-day {
+    color: red;
+    background-color: #BEBEBE;
+    font-size: 23px;
+    font-weight: bold;
+}
+.slt-month, .slt-year {
+    width: 100%;
+    height: 100%;
+}
+#my_decision {
+    width: 197px;
+    height: 25px;
+    background: url(icon.png) white no-repeat 163px 0; 
+}
+#calendar {
+    display: none;
+}

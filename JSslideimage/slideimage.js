@@ -5,12 +5,12 @@ setInterval(function(){
     changeSlide(1);
 }, 3000);
 
-// nút pre và nút next
+// click vào các hình bên dưới
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-// click vào các hình bên dưới
+// nút pre và nút next
 function changeSlide(n) {
     showSlides(slideIndex += n);
 }
