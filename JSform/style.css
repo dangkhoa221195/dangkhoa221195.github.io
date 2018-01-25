@@ -1,0 +1,31 @@
+.container {
+    display: table;
+}
+#calendar {
+    display: none;
+}
+#username_error, #password_error, #email_error, #birthday_error {
+    color: red;
+    font-weight: bold;
+}
+#username, #password, #email, #birthday {
+    width: 250px;
+    height: 20px;
+}
+.arrow {
+    color: #2E86C1;
+    cursor: pointer;
+    background: #A9CCE3;
+}
+.word-day {
+    color: red;
+    background-color: #BEBEBE;
+    font-size: 23px;
+    font-weight: bold;
+}
+#table_form {
+    width: 100%;
+}
+#birthday {
+    background: url(icon.png) white no-repeat 212px 0; 
+}

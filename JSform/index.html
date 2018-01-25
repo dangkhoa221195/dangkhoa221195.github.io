@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index.html</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="changeDate('return')">
+    <div class="container">
+        <form id="my_form" name="my_form" method="POST" onsubmit="return validateForm()" action="http://dangkhoa2211.freevnn.com/process.php">
+            <table id="table_form">
+                <tr>
+                    <td><b>Username:</b></td>
+                    <td><input type="text" id="username" name="username" required></td>
+                    <td><span id="username_error"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Password:</b></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                    <td><span id="password_error"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Email:</b></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                    <td><span id="email_error"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Birthday:</b></td>
+                    <td>
+                        <input type="text" id="birthday" name="birthday" onfocus="document.getElementById('calendar').style.display = 'block';" required>
+                        <div id="calendar"></div>
+                    </td>
+                    <td><span id="birthday_error"></span></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2"><input type="submit" name="SUBMIT" value="SUBMIT"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+<script src="calendar.js"></script>
+<script src="validateForm.js"></script>
+</body>
+</html>
