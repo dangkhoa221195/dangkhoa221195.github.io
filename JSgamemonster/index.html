@@ -30,10 +30,14 @@
 <div id="toado"></div>
 
 <script>
+// main canvas
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
+
+// menu canvas
 var canvasMenu = document.getElementById("menu");
 var ctxMenu = canvasMenu.getContext("2d");
+
 var speed = 2;
 var myReq;
 var success = 0;
@@ -47,31 +51,41 @@ var speed = 2;
 var bomb = 3;
 var random, random2, random3;
 
+// image heart
 var heart_icon = new Image();
 heart_icon.src = "images/heart_icon.png";
 
+// image replay
 var replay_icon = new Image();
 replay_icon.src = "images/replay.png";
 
+// image pause
 var pause_icon = new Image();
 pause_icon.src = "images/pause.png";
 
+// image bomb
 var bomb_icon = new Image();
 bomb_icon.src = "images/bomb.png";
 
+// image explode
 var explode_icon = new Image();
 explode_icon.src = "images/explode.png";
 
+// tọa đô heart
 var heart_icon_x = 70;
 sessionStorage.highScore = 0;
 
-// kiểm tra khi click vào monster
+/**
+ * Event click monster
+ *
+ */
 canvas.addEventListener("click", canvasFunction);
 
 function canvasFunction(e) {
     var preX = e.pageX - this.offsetLeft;
     var preY = e.pageY - this.offsetTop;
     
+    // màn hình có 1 monster
     if (level == 1) {
         if (preX > myMonster.x && preX < myMonster.x + 100 && preY > myMonster.y && preY < myMonster.y + 100) {
             clearInterval(myReq);
@@ -87,10 +101,11 @@ function canvasFunction(e) {
             }
             
             main();
-        } else missClick();
+        } else missClick(); // click ra ngoài monster
 
     }
     
+    // màn hình có 2 monster
     if (level == 2) {
         if (preX > myMonster.x && preX < myMonster.x + 100 && preY > myMonster.y && preY < myMonster.y + 100) {
             clearInterval(myReq);
@@ -120,9 +135,10 @@ function canvasFunction(e) {
             }
             
             main();
-        } else missClick();
+        } else missClick(); // click ra ngoài monster
     }
     
+    // màn hình có 3 monster
     if (level == 3) {
         if (preX > myMonster.x && preX < myMonster.x + 100 && preY > myMonster.y && preY < myMonster.y + 100) {
             clearInterval(myReq);
@@ -166,11 +182,14 @@ function canvasFunction(e) {
             }
             
             main();
-        } else missClick();
+        } else missClick(); // click ra ngoài monster
     }
 }
 
-// reset game
+/**
+ * Event reset game
+ *
+ */
 canvasMenu.addEventListener("click", function(e) {
     var preX = e.pageX - this.offsetLeft;
     var preY = e.pageY - this.offsetTop;
@@ -180,7 +199,10 @@ canvasMenu.addEventListener("click", function(e) {
     }
 });
 
-// pause game
+/**
+ * Event pause game
+ *
+ */
 canvasMenu.addEventListener("click", pauseGame);
 
 function pauseGame(e) {
@@ -206,7 +228,10 @@ function pauseGame(e) {
     }
 }
 
-// bomb
+/**
+ * Event bomb
+ *
+ */
 canvasMenu.addEventListener("click", makeBomb);
 
 function makeBomb(e) { 
@@ -226,8 +251,12 @@ function makeBomb(e) {
     }
 }
 
-// menu
+/**
+ * Menu function
+ *
+ */
 function menu() {
+    // display heart
     ctxMenu.clearRect(0, 0, 500, 100);
     ctxMenu.font="20px Arial";
     ctxMenu.fillStyle = "white";
@@ -239,35 +268,46 @@ function menu() {
     }
     heart_icon_x = 70;
     
+    // display score
     ctxMenu.font="20px Arial";
     ctxMenu.fillStyle = "white";
     ctxMenu.fillText("Score: " + score, 10, 60);
     
+    // display icon replay, pause, bomb
     ctxMenu.drawImage(replay_icon, 320, 40, 40, 40);
     ctxMenu.drawImage(pause_icon, 380, 40, 40, 40);
     ctxMenu.drawImage(bomb_icon, 440, 40, 40, 40);
     
+    // display number of bomb
     ctxMenu.font="20px Arial";
     ctxMenu.fillStyle = "white";
     ctxMenu.fillText(bomb, 475, 50);
 }
 
+/**
+ * Update function
+ *
+ */
 function update() {  
     myReq = setInterval(function() {
         context.clearRect(0, 0, 500, 500);
         
+        // draw blood when a monster's killed
         if (success == 1) {
             var killed = new Image();
             killed.src = "images/blood.png";
             context.drawImage(killed, success_x, success_y, 100, 100);
         }
         
+        // display level
         context.font="20px Arial";
         context.fillStyle = "yellow";
         context.fillText("Level: " + level, 10, 20);
         
+        // display menu
         menu();
            
+        // display monsters   
         myMonster.newPos();
         myMonster.update();
         if (level == 2) {
@@ -283,8 +323,12 @@ function update() {
     }, 20);
 }
 
-// hàm chính
+/**
+ * Main function
+ *
+ */
 function main() {
+    // create monster according to level
     if (level == 1) random = Math.floor((Math.random() * 9) + 1);
     else if (level == 2) {
         do {
@@ -299,6 +343,7 @@ function main() {
         } while (random == random2 || random == random3 || random2 == random3);
     }
     /*
+    monster position
     1   2   3
     4   9   5
     6   7   8
@@ -399,6 +444,10 @@ function main() {
     update();
 }
 
+/**
+ * Component
+ *
+ */
 function component(width, height, src, x, y, direct = 0) {
     this.image = new Image();
     this.image.src = src;
@@ -413,7 +462,7 @@ function component(width, height, src, x, y, direct = 0) {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
     this.newPos = function() {
-        if (x == 0 && y == 0) {                                         // monster 1
+        if (x == 0 && y == 0) {                              // monster 1
             if (this.x < 100 && this.changeDirect == 0) {
                 this.x += speed;
                 this.y += speed;
@@ -426,6 +475,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         } 
+        
         if (x == 200 && y == 0) {                            // monster 2
             if (this.y < 100 && this.changeDirect == 0) {
                 this.y += speed;
@@ -438,6 +488,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 400 && y == 0) {                            // monster 3
             if (this.x > 300 && this.changeDirect == 0) {
                 this.x -= speed;
@@ -452,6 +503,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 0 && y == 200) {                            // monster 4
             if (this.x < 100 && this.changeDirect == 0) {
                 this.x += speed;
@@ -464,6 +516,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 400 && y == 200) {                            // monster 5
             if (this.x > 300 && this.changeDirect == 0) {
                 this.x -= speed;
@@ -476,6 +529,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 0 && y == 400) {                            // monster 6
             if (this.y > 300 && this.changeDirect == 0) {
                 this.x += speed;
@@ -490,6 +544,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 200 && y == 400) {                            // monster 7
             if (this.y > 300 && this.changeDirect == 0) {
                 this.y -= speed;
@@ -502,6 +557,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 400 && y == 400) {                            // monster 8
             if (this.x > 300 && this.changeDirect == 0) {
                 this.x -= speed;
@@ -516,6 +572,7 @@ function component(width, height, src, x, y, direct = 0) {
                 this.changeDirect = 1;
             }
         }
+        
         if (x == 200 && y == 200) {                              // monster 9
             switch (this.direct) {
                 case 1:
@@ -539,6 +596,10 @@ function component(width, height, src, x, y, direct = 0) {
     }
 }
 
+/**
+ * Monster out of main canvas
+ *
+ */
 function monsterIsOut() {
     if (level == 1) score -= 10;
     else if (level == 2) score -= 20;
@@ -552,6 +613,10 @@ function monsterIsOut() {
     }
 }
 
+/**
+ * Set game over
+ *
+ */
 function gameOver() {
     ctx.font="50px Arial";
     ctx.fillStyle = "red";
@@ -568,15 +633,16 @@ function gameOver() {
     clearInterval(myReq);
 }
 
+/**
+ * Reset game
+ *
+ */
 function reset() {
     heart = 3;
     score = 100;
     level = 1;
     speed = 2;
     bomb = 3;
-    //if (typeof myMonster == 'defined') delete myMonster;
-    //if (typeof myMonster2 == 'defined') delete myMonster2;
-    //if (typeof myMonster2 == 'defined') delete myMonster3;
     context.clearRect(0, 0, 500, 500);
     clearInterval(myReq);
     canvas.addEventListener("click", canvasFunction);
@@ -585,6 +651,10 @@ function reset() {
     main();
 }
 
+/**
+ * Click ko trúng monster
+ *
+ */
 function missClick() {
     heart--;
     score -= 10;
@@ -594,75 +664,6 @@ function missClick() {
 }
 
 main();
-
-// lặp khung hình
-//const RADIUS = 20;
-//var cx = 100;
-//var cy = 100;
-//var speedX = 2;
-//var speedY = 2;
-//var _canvas;
-//var _context;
-//var _reqAnimation;
-//var _angle = 0;
-//
-//function update(time) {
-//    cx += speedX;
-//    cy += speedY;
-//
-//    if(cx<0 || cx > _canvas.width)
-//    speedX = -speedX;
-//    if(cy<0 || cy > _canvas.height)
-//    speedY = -speedY;
-//    // draw
-//    _context.clearRect(0, 0, _canvas.width, _canvas.height);
-//    _context.beginPath();
-//    _context.arc(cx, cy, RADIUS, 0, Math.PI*2, false);
-//    _context.closePath();
-//    _context.fill();
-//    _reqAnimation(update);
-//}
-//
-//window.onload = function(){
-//    _canvas = document.getElementById("canvas");
-//    _context = _canvas.getContext("2d");
-//    _context.fillStyle = "red";
-//    cx = _canvas.width/2;
-//    cy = _canvas.height/2;
-//    _reqAnimation = window.requestAnimationFrame ||
-//
-//    window.mozRequestAnimationFrame ||
-//    window.webkitRequestAnimationFrame ||
-//    window.msRequestAnimationFrame ||
-//    window.oRequestAnimationFrame ;
-//
-//    if(_reqAnimation)
-//        update();
-//    else
-//        alert("Your browser doesn't support requestAnimationFrame.");
-//};
-
-
-// vẽ image
-//window.onload = function(){
-//    var canvas = document.getElementById("canvas");
-//    var context = canvas.getContext("2d");
-//    var img = new Image();
-//    img.onload = function(){
-//        context.drawImage(img, 10, 10,50,50);
-//    };
-//    img.src = "images/GameMonster.png";
-//};
-
-
-// sự kiện con chuột
-//var canvas = document.getElementById("canvas");
-//var context = canvas.getContext("2d");
-//canvas.addEventListener("mousemove", function(e) {
-//    var preX = e.pageX - this.offsetLeft;
-//    var preY = e.pageY - this.offsetTop;
-//    document.getElementById("toado").innerHTML = preX;
-//});
 </script>
 </body>
 </html>
