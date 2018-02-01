@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index.html</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    #username_exist, #email_invalid {
+        color: red;
+        font-weight: bold;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="my_form" name="my_form" method="POST" action="http://dangkhoa2211.freevnn.com/JQprocess.php" enctype="multipart/form-data">
+            <table id="table_form">
+                <tr>
+                    <td><b>Username:</b></td>
+                    <td><input type="text" id="username" name="username" required></td>
+                    <td>
+                        <span id="username_error">Username length min 8 letters</span>
+                        <span id="username_exist">Username already exist</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Password:</b></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                    <td><span id="password_error">Password length min 8 letters</span></td>
+                </tr>
+                <tr>
+                    <td><b>Email:</b></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                    <td>
+                        <span id="email_error">Email length min 8 letters</span>
+                        <span id="email_invalid">Invalid email</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Birthday:</b></td>
+                    <td>
+                        <input type="text" id="birthday" name="birthday" required>
+                        <div id="calendar"></div>
+                    </td>
+                    <td><span id="birthday_error">Birthday phải bé hơn ngày hiện tại</span></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2"><input id="submit" type="submit" name="SUBMIT" value="SUBMIT"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="validateForm.js"></script>
+</body>
+</html>
