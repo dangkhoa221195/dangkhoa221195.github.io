@@ -1,0 +1,90 @@
+#container {
+    height: 600px;
+    width: 500px;
+    border: 1px solid green;
+    margin: auto;
+}
+#menu {
+    height: 100px;
+    width: 500px;
+    background: url(images/mnbg.png);
+    position: relative;
+}
+#heart {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 12px;
+    left: 15px;
+}
+.heart-icon {
+    width: 30px;
+}
+#score {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 50px;
+    left: 15px;
+}
+#replay {
+    position: absolute;
+    width: 36px;
+    top: 31px;
+    left: 302px;
+}
+#pause {
+    position: absolute;
+    width: 43px;
+    top: 31px;
+    left: 362px;
+}
+#bomb_icon {
+    position: absolute;
+    width: 43px;
+    top: 31px;
+    left: 425px;
+}
+#bomb {
+    position: absolute;
+    color: white;
+    font-size: 27px;
+    top: 15px;
+    left: 468px;
+}
+#main {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    background: url(images/background.jpg);
+    overflow: hidden;
+    cursor: pointer;
+}
+.monster {
+    position: absolute;
+}
+#noti {
+    color: red;
+    position: absolute;
+    top: 160px;
+    left: 110px;
+    font-size: 50px;
+    display: none;
+}
+#info {
+    width: 300px;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 210px;
+    left: 110px;
+    text-align: center;
+    display: none;
+}
+#explode {
+    position: absolute;
+    width: 480px;
+    top: 20px;
+    left: 20px;
+    display: none;
+}
