@@ -9,6 +9,7 @@ var myChart = (function() {
     const Oy = 250;
     var canvas = document.getElementById("my_chart");
     var ctx = canvas.getContext("2d");
+    var color = "#00AEEF";
 
     var drawVertical = function() {
         
@@ -73,7 +74,7 @@ var myChart = (function() {
                               dataCoordinate[i + 1][0], dataCoordinate[i + 1][1]);
         }
         
-        ctx.strokeStyle = "#00AEEF";
+        ctx.strokeStyle = color;
         ctx.stroke();
     }
     
