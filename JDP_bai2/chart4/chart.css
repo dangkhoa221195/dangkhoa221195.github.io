@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+#container {
+    position: relative;
+    width: 700px;
+    margin: auto;
+    text-align: center;
+}
+#header {
+    font-size: 20px;
+    margin-top:5px;
+}
+#left {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 167px;
+    font-size: 19px;
+    left: -37px;
+    color: gray;
+    font-style: italic;
+}
+#footer {
+    color: gray;
+    font-style: italic;
+}
