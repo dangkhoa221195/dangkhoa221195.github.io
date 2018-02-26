@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Game monster</title>
+    <style>
+    div.gamefield {
+        width: 100%;
+        height: 500px;
+        border: 1px red solid;
+    }
+
+    div.balloon {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100px;
+        height: 150px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    </style>
+</head>
+<body>
+    <div class="gamefield">
+        Click this area to add balloons! 
+        <br />
+        Click fast or click slow!
+    </div>
+<script>
+var burl = "http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/green-jelly-icons-culture/028931-green-jelly-icon-culture-balloon.png";
+
+function createBalloon() {
+    var gamefield = $("div.gamefield");
+
+    var d = $(document.createElement("div"));
+    d.addClass("balloon");
+    d.css("background-image", "url('" + burl + "')");
+
+    var maxwidth = gamefield.width() - 100;
+    var left = Math.round(maxwidth * Math.random());
+
+    d.css("left", left+"px");
+    d.css("bottom", "0px");
+
+    gamefield.append(d);
+    d.animate({
+        bottom: gamefield.height()
+    }, 3000, function() {
+        animationComplete($(this));
+    });
+}
+
+function animationComplete(jobj) {
+    jobj.remove();
+}
+
+$(function() {
+    $("div.gamefield").click(function() {
+        createBalloon();
+    });
+});
+</script>
+</body>
+</html>
