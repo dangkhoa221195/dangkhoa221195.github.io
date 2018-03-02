@@ -1,0 +1,464 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    border-top: #F0831E solid 0.5em;
+    color: #67432D;
+}
+.inner, .header, .slide, .main, .footer-content, .footer, header nav {
+    width: 960px;
+    margin: auto;
+}
+.inner p {
+    height: 3em;
+    width: 100%;
+    text-align: left;
+    font-size: 0.85em;
+}
+
+/*Header*/
+.header {
+    margin-top: 0.5em;
+    display: table;
+}
+.header-logo {
+    width: 50%;
+    float: left;
+}
+.header-logo img {
+    width: 100%;
+}
+.header-info {
+    width: 50%;
+    float: right;
+    font-size: 0.85em;
+    text-align: right;
+    line-height: 1.5em;
+}
+.header-info img {
+    width: 43%;
+}
+div.header-info p:last-child {
+    color: #EF831E;
+    font-size: 0.9em;
+}
+
+/*Menu*/
+.menu {
+    width: 100%;
+    height: 3.5em;
+    border-bottom: 0.05em solid gray;
+    border-top: 0.05em solid gray;
+    display: table;
+    position: relative;
+}
+
+header nav {
+	text-align: center;
+    display: block;
+}
+header nav ul {
+	padding-top: 2px;
+	list-style-type: none;
+    display: inline-block;
+    width: 100%;
+    background: url("../images/line_menu.jpg") no-repeat left center;
+}
+header nav ul li.dropdown, .dropdown1, .dropdown2, .dropdown3, .dropdown4, .dropdown5, .dropdown6, .dropdown7 {
+    float: left;
+	display: inline-block;
+    width: 137px;
+    position: relative;
+    
+    height: 50px;
+    text-align: center;
+}
+header nav ul li ul.dropdown-content, .dropdown-content3, .dropdown-content4 {
+	display: none;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    top: 50px;
+}
+header.menu ul li ul li {
+    background: #F6A61E;
+    line-height: 2em;
+    border-bottom: 1px solid #67432D;
+}
+header.menu ul li ul li a {
+    text-decoration: none;
+    color: #67432D;
+    font-size: 0.8em;
+}
+.dropdown1 a img, .dropdown2 a img, .dropdown3 a img, .dropdown4 a img, .dropdown5 a img, .dropdown6 a img, .dropdown7 a img {
+    display: none;
+}
+.dropdown1 {
+    background: url("../images/menu_1_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown2 {
+    background: url("../images/menu_2.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown3 {
+    background: url("../images/menu_3.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown4 {
+    background: url("../images/menu_4.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown5 {
+    background: url("../images/menu_5.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown6 {
+    background: url("../images/menu_6.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown7 {
+    background: url("../images/menu_7.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 53px;
+}
+.dropdown1:hover .dropdown1 img,
+.dropdown2:hover .dropdown2 img,
+.dropdown3:hover .dropdown3 img,
+.dropdown4:hover .dropdown4 img,
+.dropdown5:hover .dropdown5 img,
+.dropdown6:hover .dropdown6 img,
+.dropdown7:hover .dropdown7 img {
+    display: none;
+}
+
+.dropdown1:hover {
+    background: url("../images/menu_1_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 50px;
+}
+.dropdown2:hover {
+    background: url("../images/menu_2_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 50px;
+}
+.dropdown3:hover {
+    background: url("../images/menu_3_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 50px;
+}
+.dropdown4:hover {
+    background: url("../images/menu_4_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 50px;
+}
+.dropdown5:hover {
+    background: url("../images/menu_5_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 50px;
+}
+.dropdown6:hover {
+    background: url("../images/menu_6_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 125px 50px, 1px 50px;
+}
+.dropdown7:hover {
+    background: url("../images/menu_7_hover.jpg") no-repeat 5px 0, url("../images/line_menu.jpg") no-repeat right center;
+    background-size: 120px 50px, 1px 50px;
+}
+
+.dropdown3:hover .dropdown-content3,
+.dropdown4:hover .dropdown-content4 {
+    display: block;
+}
+
+/*Main*/
+.main {
+    display: table;
+}
+
+/*Articles*/
+.articles {
+    display: table;
+    width: 70%;
+    float: left;
+}
+.article {
+    width: 100%;
+    margin-bottom: 3em;
+    display: table;
+}
+.title {
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+.title img {
+    margin-left: 5%;
+    width: 12%;
+}
+.title-line {
+    width: 100%;
+}
+.title-line img {
+    width: 100%;
+    margin-left: 2%;
+}
+.content {
+    display: table;
+}
+.content-img {
+    width: 45%;
+    float: left;
+}
+.content-img img {
+    width: 100%;
+}
+.content p {
+    width: 50%;
+    float: right;
+    line-height: 1.2em;
+    font-size: 0.9em;
+}
+.sections {
+    text-align: center;
+}
+.section {
+    width: 16em;
+    height: auto;
+    margin: auto;
+    border: 0.1em solid gray;
+    font-size: 0.8em;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 2em;
+}
+.section img {
+    width: 100%;
+}
+.section p {
+    width: 90%;
+    margin: auto;
+    min-height: 11em;
+    display: table;
+    margin-bottom: 0.5em;
+}
+.section-button {
+    width: 95%;
+    margin: auto;
+}
+.section-button img {
+    width: 100%;
+}
+div.articles div.article:nth-child(3) div.title {
+    position: relative;
+}
+.title-button {
+    position: absolute;
+    bottom: 20%;
+    right: 2%;
+    width: 10%;
+}
+.title-button img {
+    width: 100%;
+    
+}
+.date {
+    margin-top: 1em;
+}
+.date p {
+    background: url("../images/footer_bullet.png") no-repeat 0.5em 0.5em;
+    text-align: left;
+    padding-left: 1.5em;
+    margin-top: 0.5em;
+}
+.dotted-line {
+    width: 100%;
+    height: 0.2em;
+    background: url("../images/bg_index_dl.jpg") 0 0.5em;
+    margin-top: 0.5em;
+}
+/*Aside*/
+.asides {
+    width: 25%;
+    float: right;
+}
+.aside1 {
+    width: 100%;
+}
+.aside1 img {
+    width: 100%;
+}
+.aside2 {
+    width: 100%;
+    min-height: 12em;
+    margin-top: 1.5em;
+    display: table;
+    border: 0.24em solid #e9dfd9;
+    border-radius: 0.2em;
+    padding-top: 0.2em;
+    padding-bottom: 1.2em;
+    border-style: double;
+    text-align: left;
+    box-sizing: border-box;
+}
+.aside2 img {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.aside2 ul {
+    margin-top: 0.5em;
+    padding-left: 25%;
+    padding-left: 10%;
+    list-style-type: none;
+    
+}
+.aside2 p {
+    width: 80%;
+    padding-left: 20%;
+    background: url("../images/aside_bullet_1.jpg") no-repeat 10% 0.4em;
+    border-bottom: 0.01em solid #e9dfd9;
+    margin-top: 1.5em;
+}
+.aside2 ul li {
+    padding-left: 10%;
+    background: url("../images/aside_bullet_2.jpg")  no-repeat 5% 0.4em;
+}
+.aside3 {
+    width: 100%;
+    margin-top: 1.5em;
+}
+.aside4 {
+    width: 100%;
+    margin-top: 1.5em;
+}
+.aside5 {
+    width:100%;
+    min-height: 5em;
+    display: table;
+    border: #e9dfd9 0.2em solid;
+    border-radius: 0.2em;
+    padding-top: 1em;
+    text-align: center;
+}
+.aside5 img {
+    margin-top: 1em;
+}
+.aside5-content p {
+    width: 80%;
+    margin: auto;
+    font-size: 0.85em;
+    text-align: left;
+    margin-top: 1em;
+}
+.aside5 iframe {
+    width: 80%;
+    margin: auto;
+    margin-top: 1.5em;
+    border: 0;
+}
+
+/*Footer*/
+.footer {
+    margin-top: 2.5em;
+    clear: both;
+    width: 100%;
+    background: url("../images/footer_bg.jpg");
+    min-height: 3em;
+    padding-top: 1.5em;
+    display: table;
+}
+.footer-info {
+    width: 35%;
+    display: table;
+    float: left;
+}
+.footer-logo {
+    width: 60%;
+    float: left;
+    margin-bottom: 1em;
+}
+.footer-logo img {
+    width: 100%;
+}
+.footer-info p {
+    clear: both;
+    text-align: left;
+    font-size: 0.75em;
+}
+.footer-phone {
+    width: 75%;
+    margin-top: 1em;
+}
+.footer-phone img{
+    width: 100%;
+}
+.footer-links {
+    float: left;
+    width: 35%;
+    display: table;
+    border: 0.05em solid #e7d3c1;
+    margin-left: 5%;
+    padding-top: 1em;
+}
+.footer-link {
+    width: 40%;
+    margin-left: 10%;
+    float: left;
+}
+.footer-link ul {
+    list-style-image: url("../images/footer_bullet.png");
+}
+.footer-link ul li {
+    padding-left: 0.8em;
+    line-height: 2em;
+}
+.footer-link ul li a {
+    text-decoration: none;
+    color: #67432D;
+}
+.footer-link ul li a:hover {
+    text-decoration: underline;
+}
+.footer-others {
+    font-size: 0.9em;
+    width: 20%;
+    background: white;
+    margin-left: 3%;
+    float: left;
+    padding-top: 1em;
+}
+.footer-others p {
+    background: url("../images/aside_bullet_1.jpg") no-repeat 10% 50%;
+    padding-left: 20%;
+}
+.footer-others ul {
+    list-style-type: none;
+    width: 90%;
+    margin: auto;
+    padding-left: 15%;
+}
+.footer-others a {
+    text-decoration: none;
+    color: #67432D;
+}
+.footer-others ul a:hover {
+    text-decoration: underline;
+}
+.footer-others ul li {
+    background: url("../images/footer_bullet.png")  no-repeat 0 0.4em;
+    padding-left: 10%;
+    line-height: 1.8em;
+}
+.copyright {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: #f88e01;
+    font-size: 0.9em;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+@media print {
+    html, body {
+        display: none; /* hide whole page */
+    }
+}
