@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="utf-8">
+        <script language="javascript" src="jquery-3.2.1.min.js"></script>
+        <script>
+            $(function () {
+                $("#myfile").change(function() {
+                    var $file = $("#myfile").val();
+                    $.ajax({
+                        url: 'fopen.php',
+                        data: 'file=' + $file,
+                        type: 'POST',
+                        success: function (data) {
+                            $(".file-content").html(data);
+                        }
+                    });
+                });
+            
+                $('#btn').click(function () {     
+                    $('.myprogress').css('width', '0');
+                    var myfile = $('#myfile').val();
+                    
+                    if (myfile == '') {
+                        alert('Please select file');
+                        return;
+                    }
+                    
+                    var formData = new FormData();
+                    formData.append('myfile', $('#myfile')[0].files[0]);
+                    $('#btn').attr('disabled', 'disabled');
+                    $('.msg').text('Uploading in progress...');
+ 
+                    $.ajax({
+                        url: 'docfile.php',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        type: 'POST',
+                        // this part is progress bar
+                        xhr: function () {
+                            var xhr = new window.XMLHttpRequest();
+                            xhr.upload.addEventListener("progress", function (evt) {
+                                if (evt.lengthComputable) {
+                                    var percentComplete = evt.loaded / evt.total;
+                                    percentComplete = parseInt(percentComplete * 100);
+                                    $('.myprogress').text(percentComplete + '%');
+                                    $('.myprogress').css('width', percentComplete + '%');
+                                }
+                            }, false);
+                            return xhr;
+                        },
+                        success: function (data) {
+                            $('.msg').text(data);
+                            $('#btn').removeAttr('disabled');
+                        }
+                    });
+                });
+            });
+        </script>
+        <style>
+        .myprogress {
+            width: 0;
+            color: white;
+            text-align: center;
+            background-color: green;
+        }
+        .file-content {
+            width: 30%;
+            border: 1px solid black;
+            padding: 0.3em 1em;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form id="myform" method="post">
+                <label>Select file: </label>
+                <input type="file" id="myfile" />
+                <div class="myprogress">0%</div>
+                <div class="msg"></div>
+                <div class="file-content"></div>
+                <input type="button" id="btn" value="Upload" />
+            </form>
+        </div>
+    </body>
+</html>
